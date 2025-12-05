@@ -29,12 +29,13 @@ export default function GrupGalerie({ grupGalerie }: GrupProps) {
       <div>
         <div className="aspect-video rounded-lg overflow-hidden shadow">
          <iframe
-          src={videoYt.replace("watch?v=", "embed/").replace("youtube.com", "youtube-nocookie.com") || ""}
-          className="w-full h-full"
-          allowFullScreen
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          loading="lazy"
-        />
+                src={videoYt.replace("watch?v=", "embed/").replace("youtube.com", "youtube-nocookie.com") || ""}
+                className="w-full h-full"
+                title="Video curs"
+                allowFullScreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                loading="lazy"
+              />
         </div>
       </div>
 

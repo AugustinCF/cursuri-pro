@@ -15,5 +15,15 @@ const config: Config = {
     },
   },
   plugins: [],
+  // Add this to remove unused classes in production
+  ...(process.env.NODE_ENV === 'production' && {
+    purge: {
+      enabled: true,
+      content: [
+        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+      ],
+    },
+  }),
 };
 export default config;

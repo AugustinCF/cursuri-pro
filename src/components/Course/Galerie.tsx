@@ -27,9 +27,9 @@ export default function GrupGalerie({ grupGalerie }: GrupProps) {
 
       {/* VIDEO COLUMN */}
       <div>
-        <div className="aspect-video rounded-lg overflow-hidden shadow">
+        <div className="aspect-video rounded-lg overflow-hidden shadow bg-gray-200">
          <iframe
-                src={videoYt.replace("watch?v=", "embed/").replace("youtube.com", "youtube-nocookie.com") || ""}
+                src={videoYt.replace("watch?v=", "embed/").replace("youtube.com", "youtube-nocookie.com") + "?rel=0&modestbranding=1&playsinline=1"}
                 className="w-full h-full"
                 title="Video curs"
                 allowFullScreen
@@ -59,6 +59,8 @@ export default function GrupGalerie({ grupGalerie }: GrupProps) {
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover rounded-xl"
+                  quality={75}
+                  loading="lazy"
                 />
                 </div>
               </SwiperSlide>

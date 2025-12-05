@@ -2,7 +2,7 @@ import { Course } from "@/types/course";
 
 export default function CourseSpecs({ course }: { course: Course }) {
   return (
-<div className="max-w-7xl text-xl mx-3 sm:mx-auto -mt-10 grid grid-cols-2 sm:grid-cols-5 gap-4 Bg-gray p-6 rounded-xl shadow z-10 relative">
+<div className="max-w-7xl text-l sm:text-xl mx-3 sm:mx-auto -mt-10 grid grid-cols-2 sm:grid-cols-5 gap-4 Bg-gray p-6 rounded-xl shadow z-10 relative">
   <div className="text-xleft sm:text-center">
     <strong>Preț Curs</strong>
     <div className="mt-1">{course.acf.price} RON</div>

@@ -33,6 +33,8 @@ export default function CourseHero({
           fill
           priority
           className="object-cover"
+          sizes="100vw"
+          quality={75}
         />
         <div className="absolute inset-0 gradient-hero pointer-events-none"></div>
       </div>
@@ -54,6 +56,8 @@ export default function CourseHero({
                 alt={`${instructor} poza`}
                 fill
                 className="object-cover"
+                sizes="40px"
+                quality={80}
               />
             </div>
           ) : (

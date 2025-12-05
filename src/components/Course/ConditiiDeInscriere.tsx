@@ -47,6 +47,9 @@ export default function ConditiiDeInscriere({ grupConditiiDeInscriere }: GrupPro
             alt={conditiiDeInscriereImagine.node.altText || "Condiții de înscriere"}
             width={400} 
             height={400}
+            quality={75}
+            loading="lazy"
+            sizes="(max-width: 768px) 100vw, 400px"
            />
           )}
       <div>

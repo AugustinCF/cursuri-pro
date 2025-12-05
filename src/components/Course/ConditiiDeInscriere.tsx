@@ -24,8 +24,8 @@ export default function ConditiiDeInscriere({ grupConditiiDeInscriere }: GrupPro
     <section className="w-full bg-gray-100 py-10">
       <div className="max-w-7xl mx-3 sm:mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
       <div>
-        <h2 className="text-l font-bold mb-6">Ce vei învăța</h2>
-        <ul className="mb-10 text-l space-y-2">
+        <h2 className="text-xl font-bold mb-6">Ce vei învăța</h2>
+        <ul className="mb-10 text-xl space-y-2">
           {conditiiDeInscriere.map((item, i) => (
             <li key={i} className="flex items-center">
               <span><CheckIcon size={18} className="text-green-500 mr-2" /></span>

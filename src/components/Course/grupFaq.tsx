@@ -34,7 +34,7 @@ export default function GrupFaq({ GrupFaq }: GrupFaqProps) {
               >
                 {/* TITLU */}
                 <div className="flex justify-between items-center">
-                  <span className="text-l font-semibold">{item.faq_titlu}</span>
+                  <span className="text-xl font-semibold">{item.faq_titlu}</span>
 
                   {/* ICON ROTATING */}
                   <motion.span
@@ -57,7 +57,7 @@ export default function GrupFaq({ GrupFaq }: GrupFaqProps) {
                       transition={{ duration: 0.35 }}
                       className="overflow-hidden"
                     >
-                      <p className="mt-3 text-gray-700 text-l leading-relaxed">
+                      <p className="mt-3 text-gray-700 text-xl leading-relaxed">
                         {item.faqDescriere}
                       </p>
                     </motion.div>

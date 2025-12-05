@@ -44,7 +44,7 @@ export default function CoursePage({ course }: Props) {
       />
       <CourseSpecs course={course} />
       <div
-        className="prose lg:prose-xl max-w-7xl mx-3 sm:mx-auto mt-10"
+        className="prose lg:prose-xl text-xl max-w-7xl mx-3 sm:mx-auto mt-10"
         dangerouslySetInnerHTML={{ __html: course.content || "" }}
       />
 

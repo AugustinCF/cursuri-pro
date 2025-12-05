@@ -41,7 +41,7 @@ export default function CourseHero({
       <div className="relative max-w-7xl mx-3 sm:mx-auto pt-4 flex flex-col text-white">
         <h1 className="text-3xl md:text-4xl font-bold">{title}</h1>
 
-        <p className="text-lg mt-2">Curs disponibil în {city}</p>
+        <p className="text-xlg mt-2">Curs disponibil în {city}</p>
 
         <p className="max-w-2xl mt-2">{shortDescription}</p>
 
@@ -70,7 +70,7 @@ export default function CourseHero({
 
         {/* CTA BUTTON */}
         <button
-          className="mt-6 YellowColor text-white py-3 px-12 rounded-button inline-block w-fit"
+          className="mt-6 text-xl YellowColor text-white py-3 px-12 rounded-button inline-block w-fit"
           onClick={() => setOpenModal(true)}
         >
           Înscrie-te acum !

@@ -103,6 +103,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: { course: data.course },
-    revalidate: 6000, // ISR - revalidează la fiecare 60 secunde
+    revalidate: 60, // ISR - revalidează la fiecare 60 secunde
   };
 };

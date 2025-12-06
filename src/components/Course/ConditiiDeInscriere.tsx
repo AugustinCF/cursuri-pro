@@ -33,7 +33,7 @@ export default function ConditiiDeInscriere({ grupConditiiDeInscriere }: GrupPro
             </li>
           ))}
         </ul>
-                <button className="mt-5 YellowColor text-white  py-3 px-12 rounded-button inline-block !w-auto">
+                <button className="mt-5 YellowColor text-xl text-white  py-3 px-12 rounded-button inline-block !w-auto">
           Înscrie-te acum !
           <span className="block text-xs font-semibold">
             Fără taxe ascunse

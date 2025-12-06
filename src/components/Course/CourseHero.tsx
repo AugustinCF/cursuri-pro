@@ -23,10 +23,10 @@ export default function CourseHero({
   const [openModal, setOpenModal] = useState(false);
 
   return (
-    <section className="relative min-h-[35rem] md:min-h-[25rem] z-0">
+    <section className="relative z-0">
 
       {/* Background image + overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 min-h-full">
         <Image
           src={image}
           alt={title}
@@ -40,12 +40,12 @@ export default function CourseHero({
       </div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-3 sm:mx-auto pt-4 flex flex-col text-white">
+      <div className="relative max-w-7xl mx-3 sm:mx-auto py-8 md:py-12 flex flex-col text-white">
         <h1 className="text-3xl md:text-4xl font-bold">{title}</h1>
 
         <p className="text-xlg mt-2">Curs disponibil în {city}</p>
 
-        <p className="max-w-2xl mt-2">{shortDescription}</p>
+        <p className="max-w-2xl mt-2 text-l leading-relaxed">{shortDescription}</p>
 
         {/* Instructor */}
         <div className="flex items-center space-x-3 mt-4">
@@ -74,7 +74,7 @@ export default function CourseHero({
 
         {/* CTA BUTTON */}
         <button
-          className="mt-6 text-xl YellowColor text-white py-3 px-12 rounded-button inline-block w-fit"
+          className="mt-6 mb-4 text-xl YellowColor text-white py-3 px-12 rounded-button inline-block w-fit"
           onClick={() => setOpenModal(true)}
         >
           Înscrie-te acum !

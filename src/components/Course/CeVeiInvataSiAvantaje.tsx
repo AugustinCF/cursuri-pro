@@ -13,7 +13,7 @@ export default function CeVeiInvataSiAvantaje({ grupCeVeiInvataSiAvantaje }: Gru
   const { avantajulCursului, ce_vei_invata } = grupCeVeiInvataSiAvantaje;
 
   return (
-    <section className="max-w-7xl mx-3 sm:mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+    <section className="max-w-7xl mx-3 sm:mx-auto mt-16 mb-10 grid grid-cols-1 md:grid-cols-2 gap-12">
       <div>
         <h2 className="text-xl font-bold mb-6">Ce vei învăța</h2>
         <ul className="mb-10 text-xl space-y-2">

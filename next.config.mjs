@@ -19,6 +19,10 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  // Target modern browsers to avoid unnecessary polyfills
+  experimental: {
+    browsersListForSwc: true,
+  },
 };
 
 export default nextConfig;

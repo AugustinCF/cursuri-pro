@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
-import ModalContact from "@/components/UI/ModalContact";
+import CTAButton from "@/components/UI/CTAButton";
 
 
 interface CourseHeroProps {
@@ -20,8 +19,6 @@ export default function CourseHero({
   instructor,
   PozaInstructor,
 }: CourseHeroProps) {
-  const [openModal, setOpenModal] = useState(false);
-
   return (
     <section className="relative z-0">
 
@@ -73,24 +70,8 @@ export default function CourseHero({
         </div>
 
         {/* CTA BUTTON */}
-        <button
-          className="mt-6 mb-4 text-xl YellowColor text-white py-3 px-12 rounded-button inline-block w-fit"
-          onClick={() => setOpenModal(true)}
-        >
-          Înscrie-te acum !
-          <span className="block text-xs font-semibold">Fără taxe ascunse</span>
-        </button>
+        <CTAButton className="mt-6 mb-4" />
       </div>
-
-      {/* Modal Contact */}
-      <ModalContact
-        open={openModal}
-        onClose={() => setOpenModal(false)}
-        title="Alege metoda de contact"
-        phone="+40744111222"
-        whatsapp="40744111222"
-        email="contact@firma.ro"
-      />
     </section>
   );
 }

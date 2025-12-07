@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { graphqlClient } from "@/lib/graphql-client";
 import { GET_ALL_COURSES, GET_COURSE_BY_SLUG } from "@/lib/queries";
 import { Course } from "@/types/course";
-import MainLayout from "@/components/Layout/MainLayout";
 import CourseHero from "@/components/Course/CourseHero";
 import CourseSpecs from "@/components/Course/CourseSpecs";
 import dynamic from "next/dynamic";
@@ -23,11 +22,12 @@ const ParagrafB = dynamic(() => import("@/components/Course/paragrafInvestesteIn
 
 interface Props {
   course: Course;
+  courses: Course[];
 }
 export default function CoursePage({ course }: Props) {
   if (!course) return <div>Course not found</div>;
   return (
-    <MainLayout>
+    <>
       <SEO
         title={course.acf.seoTitle || course.title}
         description={course.acf.seoDescription || "Default description"}
@@ -49,7 +49,10 @@ export default function CoursePage({ course }: Props) {
       />
 
      
-        {course.acf.grupGalerie && (
+        {course.acf.grupGalerie && 
+         (course.acf.grupGalerie.videoYt || 
+          (course.acf.grupGalerie.pozeGalerie?.nodes && 
+           course.acf.grupGalerie.pozeGalerie.nodes.length > 0)) && (
         <GrupGalerie 
           grupGalerie={{
             pozeGalerie: course.acf.grupGalerie?.pozeGalerie || { nodes: [] },
@@ -76,7 +79,7 @@ export default function CoursePage({ course }: Props) {
       <GrupFaq 
        GrupFaq={course.acf.grupFaq || []}
       />
-    </MainLayout>
+    </>
   );
 }
 
@@ -93,16 +96,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const data = await graphqlClient.request(GET_COURSE_BY_SLUG, {
-    slug: params?.slug,
-  });
+  const [courseData, allCoursesData] = await Promise.all([
+    graphqlClient.request(GET_COURSE_BY_SLUG, { slug: params?.slug }),
+    graphqlClient.request(GET_ALL_COURSES)
+  ]);
 
-  if (!data.course) {
+  if (!courseData.course) {
     return { notFound: true };
   }
 
   return {
-    props: { course: data.course },
+    props: { 
+      course: courseData.course,
+      courses: allCoursesData.courses.nodes 
+    },
     revalidate: 60, // ISR - revalidează la fiecare 60 secunde
   };
 };

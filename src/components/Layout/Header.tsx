@@ -18,6 +18,13 @@ export default function Header({ courses }: HeaderProps) {
           </Link>
 
           <nav className="flex items-center gap-6">
+            <Link 
+              href="/investeste-in-cariera-ta" 
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Investește în Cariera Ta
+            </Link>
+
             <Menu as="div" className="relative inline-block text-left">
               <Menu.Button className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
                 Cursuri Disponibile

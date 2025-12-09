@@ -4,9 +4,13 @@ import { Course } from "@/types/course";
 
 interface CoursesGridProps {
   courses: Course[];
+  limit?: number; // Număr maxim de cursuri de afișat
 }
 
-export default function CoursesGrid({ courses }: CoursesGridProps) {
+export default function CoursesGrid({ courses, limit }: CoursesGridProps) {
+  // Limitează cursurile dacă este specificat un limit
+  const displayedCourses = limit ? courses.slice(0, limit) : courses;
+
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -16,7 +20,7 @@ export default function CoursesGrid({ courses }: CoursesGridProps) {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course) => (
+          {displayedCourses.map((course) => (
             <Link
               key={course.id}
               href={`/${course.slug}`}
@@ -72,6 +76,18 @@ export default function CoursesGrid({ courses }: CoursesGridProps) {
             </Link>
           ))}
         </div>
+
+        {/* Afișează buton "Vezi toate" dacă sunt mai multe cursuri decât limita */}
+        {limit && courses.length > limit && (
+          <div className="text-center mt-12">
+            <Link
+              href="/cursuri"
+              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Vezi toate cursurile ({courses.length})
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

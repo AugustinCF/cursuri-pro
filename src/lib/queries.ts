@@ -57,10 +57,9 @@ export const GET_ALL_COURSES = `
          grupConditiiDeInscriere {
           conditiiDeInscriere
           conditiiDeInscriereImagine {
-            cursor
             node {
               altText
-              link
+              sourceUrl
             }
           }
         }
@@ -126,10 +125,9 @@ query CourseBySlug($slug: ID!) {
         grupConditiiDeInscriere {
           conditiiDeInscriere
           conditiiDeInscriereImagine {
-            cursor
             node {
               altText
-              link
+              sourceUrl
             }
           }
         }

@@ -55,7 +55,7 @@ export interface Course {
       conditiiDeInscriereImagine?: {
         node: {
           altText?: string | null;
-          mediaItemUrl: string;
+          sourceUrl: string;
         };
       } | null;
     };

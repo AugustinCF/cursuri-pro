@@ -12,7 +12,7 @@ export default function CTAButton({ className = "" }: CTAButtonProps) {
   return (
     <>
       <button
-        className={`YellowColor text-xl text-white py-3 px-12 rounded-button inline-block w-fit ${className}`}
+        className={`YellowBGColor text-xl text-white py-3 px-12 rounded-button inline-block w-fit ${className}`}
         onClick={() => setOpenModal(true)}
       >
         {CTA_CONFIG.primaryText}

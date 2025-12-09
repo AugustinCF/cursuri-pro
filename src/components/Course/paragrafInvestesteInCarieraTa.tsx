@@ -8,7 +8,7 @@ export default function ParagrafB({ course }: { course: Course })
           <p className="text-xl">
             {course.acf.paragrafInvestesteInCarieraTa}
           </p>
-        <button className="mt-5 YellowColor text-white  py-3 px-12 rounded-button inline-block !w-auto">
+        <button className="mt-5 YellowBGColor text-white  py-3 px-12 rounded-button inline-block !w-auto">
           Citeste mai mult !
         </button>
         </div>

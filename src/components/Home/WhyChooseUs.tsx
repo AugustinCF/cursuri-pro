@@ -1,36 +1,50 @@
-import CheckIcon from "@/components/icons/CheckIcon";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faChalkboardTeacher, 
+  faTractor, 
+  faCertificate, 
+  faCreditCard, 
+  faHandshake, 
+  faClock 
+} from '@fortawesome/free-solid-svg-icons';
 
 export default function WhyChooseUs() {
   const benefits = [
     {
       title: "Instructori Calificați",
       description: "Echipă de instructori cu experiență vastă în domeniu",
-      icon: "👨‍🏫"
+      icon: faChalkboardTeacher,
+      color: "OrangeColor"
     },
     {
       title: "Echipament Modern",
       description: "Utilaje noi și bine întreținute pentru practică",
-      icon: "🚜"
+      icon: faTractor,
+      color: "OrangeColor"
     },
     {
       title: "Certificare Recunoscută",
       description: "Certificat recunoscut la nivel național",
-      icon: "📜"
+      icon: faCertificate,
+      color: "text-yellow-600"
     },
     {
       title: "Plată Flexibilă",
       description: "Opțiuni multiple de plată adaptate nevoilor tale",
-      icon: "💳"
+      icon: faCreditCard,
+      color: "text-purple-600"
     },
     {
       title: "Suport Complet",
       description: "Asistență pe toată durata cursului și după finalizare",
-      icon: "🤝"
+      icon: faHandshake,
+      color: "text-orange-600"
     },
     {
       title: "Program Flexibil",
       description: "Cursuri adaptate programului tău",
-      icon: "⏰"
+      icon: faClock,
+      color: "text-yellow-500"
     }
   ];
 
@@ -48,7 +62,9 @@ export default function WhyChooseUs() {
               key={index}
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
             >
-              <div className="text-5xl mb-4">{benefit.icon}</div>
+              <div className={`text-5xl mb-4 ${benefit.color}`}>
+                <FontAwesomeIcon icon={benefit.icon} />
+              </div>
               <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
               <p className="text-gray-600">{benefit.description}</p>
             </div>

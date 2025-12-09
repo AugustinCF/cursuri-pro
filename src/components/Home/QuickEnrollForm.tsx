@@ -121,7 +121,7 @@ export default function QuickEnrollForm({ courses }: QuickEnrollFormProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full YellowColor text-white py-4 px-8 rounded-lg text-xl font-bold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+              className="w-full YellowBGColor text-white py-4 px-8 rounded-lg text-xl font-bold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center">

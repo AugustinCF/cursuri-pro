@@ -29,11 +29,15 @@ body {
   }
 }
 
-.YellowColor{
+.YellowBGColor{
 background-color:  #ef8405;
 }
 
-.YellowColor:hover{
+.OrangeColor{
+color:  #FF7A10;
+}
+
+.YellowBGColor:hover{
 background-color:  #bc7522;
 }
 
